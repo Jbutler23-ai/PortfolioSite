@@ -62,12 +62,11 @@ export default function Education() {
 }
 
 function StatusBadge({ color, children }) {
-  const classes = {
-    emerald: 'bg-emerald-50 text-emerald-600 border-emerald-200',
-    neutral: 'bg-neutral-100 text-neutral-400 border-neutral-200',
-  };
+  const cls = color === 'emerald'
+    ? 'bg-emerald-50 text-emerald-600 border-emerald-200'
+    : 'bg-neutral-100 text-neutral-400 border-neutral-200';
   return (
-    <span className={`text-[11px] px-2 py-0.5 rounded-full border font-medium ${classes[color]}`}>
+    <span className={`text-[11px] px-2 py-0.5 rounded-full border font-medium ${cls}`}>
       {children}
     </span>
   );

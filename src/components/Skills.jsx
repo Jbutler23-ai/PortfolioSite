@@ -20,7 +20,7 @@ const groups = [
   },
   {
     label: 'Other',
-    skills: ['Data Annotation', 'Evaluation & Feedback', 'Problem Solving'],
+    skills: ['AI Evaluation', 'Written Feedback', 'Problem Solving'],
   },
 ];
 
