@@ -19,16 +19,16 @@ const projects = [
     tags: ['React Native', 'Mobile', 'UI/UX'],
   },
   {
-    title: 'PixView',
+    title: 'StandupScribe',
     description:
-      'Eliminated unnecessary complexity by building a desktop image viewer in Python that opens and browses local images without the bloat of larger apps — focused on speed and simplicity.',
-    tags: ['Python', 'Tkinter', 'Desktop'],
+      'Built a zero-dependency CLI tool that generates daily standup notes by scanning local git repos for recent commits — supports plain text, Markdown, and Slack output, filters by author, copies to clipboard, and handles multi-repo environments.',
+    tags: ['Python', 'CLI', 'Git'],
   },
   {
-    title: 'ClearMyTabs',
+    title: 'envcheck',
     description:
-      'Reduced tab overload for heavy browser users by designing a Chrome extension concept that groups tabs by context, saves sessions, and cuts the cognitive cost of managing too many open pages.',
-    tags: ['JavaScript', 'Chrome Extension'],
+      'Built a static analysis tool that audits environment variable usage across a codebase by cross-referencing source code against .env files — supports 10 languages, flags missing and unused variables, and includes a --strict flag for CI/CD pipeline integration.',
+    tags: ['Python', 'CLI', 'Static Analysis'],
   },
   {
     title: 'ShiftGuard',
