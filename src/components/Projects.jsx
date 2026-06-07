@@ -21,13 +21,13 @@ const projects = [
   {
     title: 'StandupScribe',
     description:
-      'Built a zero-dependency CLI tool that generates daily standup notes by scanning local git repos for recent commits — supports plain text, Markdown, and Slack output, filters by author, copies to clipboard, and handles multi-repo environments.',
+      'Cut the time spent writing daily standups by building a CLI tool that scans local git repos for recent commits and formats them into ready-to-send notes — supports plain text, Markdown, and Slack output with no external dependencies.',
     tags: ['Python', 'CLI', 'Git'],
   },
   {
     title: 'envcheck',
     description:
-      'Built a static analysis tool that audits environment variable usage across a codebase by cross-referencing source code against .env files — supports 10 languages, flags missing and unused variables, and includes a --strict flag for CI/CD pipeline integration.',
+      'Caught misconfigured environments before they cause runtime failures by building a static analysis tool that cross-references .env files against actual code usage — flags missing and unused variables across 10 languages with a --strict mode for CI pipelines.',
     tags: ['Python', 'CLI', 'Static Analysis'],
   },
   {

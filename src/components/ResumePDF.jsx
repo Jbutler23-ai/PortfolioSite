@@ -172,8 +172,8 @@ export function ResumePDF() {
               <Text style={s.mainTitle}>Projects</Text>
               <Project name="ShiftGuard" tags="Python · CLI">Parses two CSV files — employee availability and a weekly schedule — and reports every conflict clearly. Built to solve a real scheduling problem for small teams.</Project>
               <Project name="Plant Identification App" tags="React Native · Mobile">Mobile app concept for identifying plants and viewing care info. Focused on clean navigation and practical UI decisions that reduce friction for the user.</Project>
-              <Project name="StandupScribe" tags="Python · CLI · Git">Zero-dependency CLI tool that generates daily standup notes by scanning local git repos for recent commits. Supports plain text, Markdown, and Slack output, filters by author, copies to clipboard, and handles multi-repo environments.</Project>
-              <Project name="envcheck" tags="Python · CLI · Static Analysis">Static analysis tool that audits environment variable usage by cross-referencing source code against .env files. Supports 10 languages, flags missing and unused variables, and includes a --strict flag for CI/CD integration.</Project>
+              <Project name="StandupScribe" tags="Python · CLI · Git">Cut the time spent writing daily standups by building a CLI tool that scans local git repos for recent commits and formats them into ready-to-send notes — plain text, Markdown, or Slack, no external dependencies.</Project>
+              <Project name="envcheck" tags="Python · CLI · Static Analysis">Caught misconfigured environments before they cause runtime failures by cross-referencing .env files against actual code usage — flags missing and unused variables across 10 languages with a --strict mode for CI pipelines.</Project>
             </View>
           </View>
         </View>
