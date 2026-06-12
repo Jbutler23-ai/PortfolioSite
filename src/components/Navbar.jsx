@@ -45,32 +45,30 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled || open
-            ? 'bg-white/90 backdrop-blur-md border-b border-neutral-100'
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl transition-shadow duration-300 ${
+          scrolled || open ? 'border-b border-black/[0.08]' : 'border-b border-transparent'
         }`}
       >
-        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
+        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-12">
           <a
             href="#"
             onClick={() => setOpen(false)}
-            className="text-sm font-semibold text-neutral-950 tracking-tight hover:text-neutral-500 transition-colors duration-150"
+            className="text-[13px] font-semibold text-neutral-950 tracking-tight hover:text-neutral-500 transition-colors duration-150"
           >
             Joseph Butler
           </a>
 
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-9">
             {links.map(l => {
               const isActive = active === l.toLowerCase();
               return (
                 <li key={l}>
                   <a
                     href={`#${l.toLowerCase()}`}
-                    className={`text-[13px] transition-colors duration-150 ${
+                    className={`text-[12px] transition-colors duration-150 ${
                       isActive
                         ? 'text-neutral-950 font-medium'
-                        : 'text-neutral-500 hover:text-neutral-950'
+                        : 'text-neutral-600 hover:text-neutral-950'
                     }`}
                   >
                     {l}
@@ -84,7 +82,7 @@ export default function Navbar() {
             <PDFDownloadLink
               document={<ResumePDF />}
               fileName="Joseph_Butler_Resume.pdf"
-              className="hidden md:inline-flex items-center text-[13px] font-medium px-4 py-1.5 rounded-full bg-neutral-950 text-white hover:bg-neutral-700 transition-colors duration-150"
+              className="hidden md:inline-flex items-center text-[12px] font-medium px-3.5 py-1 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-colors duration-150"
             >
               {({ loading }) => (loading ? 'Building…' : 'Resume')}
             </PDFDownloadLink>
@@ -121,7 +119,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-16 z-40 bg-white flex flex-col md:hidden"
+            className="fixed inset-0 top-12 z-40 bg-white flex flex-col md:hidden"
           >
             <div className="flex flex-col px-6 py-8 flex-1">
               <ul className="flex flex-col">

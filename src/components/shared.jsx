@@ -15,15 +15,23 @@ export function Reveal({ children, delay = 0, className = '' }) {
   );
 }
 
-export function SectionHeading({ index, title }) {
+export function Section({ id, tone = 'white', divider = false, children }) {
   return (
-    <Reveal className="mb-14">
-      <div className="flex items-baseline gap-4">
-        <span className="text-[13px] font-medium text-neutral-300 tabular-nums">{index}</span>
-        <h2 className="text-[1.7rem] md:text-[2rem] font-semibold text-neutral-950 tracking-[-0.02em]">
-          {title}
-        </h2>
+    <section id={id} className={tone === 'gray' ? 'bg-[#f5f5f7]' : 'bg-white'}>
+      <div className={`max-w-5xl mx-auto px-6 py-24 ${divider ? 'border-t border-neutral-200/70' : ''}`}>
+        {children}
       </div>
+    </section>
+  );
+}
+
+export function SectionHeading({ title, tagline }) {
+  return (
+    <Reveal className="mb-12">
+      <h2 className="text-[26px] md:text-[30px] font-semibold tracking-[-0.02em] leading-snug max-w-2xl">
+        <span className="text-neutral-950">{title}.</span>{' '}
+        <span className="text-neutral-500">{tagline}</span>
+      </h2>
     </Reveal>
   );
 }

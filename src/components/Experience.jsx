@@ -1,4 +1,4 @@
-import { Reveal, SectionHeading } from './shared';
+import { Reveal, Section, SectionHeading } from './shared';
 
 const items = [
   {
@@ -35,8 +35,8 @@ const items = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 max-w-5xl mx-auto w-full border-t border-neutral-100">
-      <SectionHeading index="02" title="Experience" />
+    <Section id="experience">
+      <SectionHeading title="Experience" tagline="What I've done so far." />
 
       <div className="flex flex-col">
         {items.map((item, i) => (
@@ -69,6 +69,6 @@ export default function Experience() {
           </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

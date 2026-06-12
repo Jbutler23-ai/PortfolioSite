@@ -1,11 +1,17 @@
-import { Reveal, SectionHeading } from './shared';
+import { Reveal, Section, SectionHeading } from './shared';
+
+const stats = [
+  { value: '577K+', label: 'VR game plays' },
+  { value: '5+', label: 'Projects shipped' },
+  { value: '3', label: 'Platforms — web, mobile, CLI' },
+];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 max-w-5xl mx-auto w-full border-t border-neutral-100">
-      <SectionHeading index="01" title="About" />
+    <Section id="about" tone="gray">
+      <SectionHeading title="About" tagline="The short version." />
 
-      <div className="grid lg:grid-cols-[1fr_300px] gap-16 xl:gap-24">
+      <div className="grid lg:grid-cols-[1fr_280px] gap-12 xl:gap-20">
         <Reveal delay={0.1} className="space-y-5 max-w-[560px]">
           <p className="text-[15px] text-neutral-500 leading-[1.9]">
             One of my VR games has been played over 577,000 times — not by luck, but because
@@ -25,23 +31,19 @@ export default function About() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.2}>
-          <div className="lg:border-l lg:border-neutral-100 lg:pl-10">
-            <Stat value="577K+" label="VR game plays" />
-            <Stat value="5+" label="Projects shipped" />
-            <Stat value="3" label="Platforms — web, mobile, CLI" last />
-          </div>
-        </Reveal>
+        <div className="flex flex-col gap-4">
+          {stats.map((stat, i) => (
+            <Reveal key={stat.label} delay={0.15 + i * 0.06}>
+              <div className="rounded-[18px] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+                <p className="text-3xl font-semibold text-neutral-950 tracking-[-0.02em] tabular-nums">
+                  {stat.value}
+                </p>
+                <p className="text-[13px] text-neutral-500 mt-1.5">{stat.label}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
-    </section>
-  );
-}
-
-function Stat({ value, label, last }) {
-  return (
-    <div className={`py-5 ${last ? '' : 'border-b border-neutral-100'}`}>
-      <p className="text-2xl font-semibold text-neutral-950 tracking-[-0.02em] tabular-nums">{value}</p>
-      <p className="text-[13px] text-neutral-400 mt-1">{label}</p>
-    </div>
+    </Section>
   );
 }

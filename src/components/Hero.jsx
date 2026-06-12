@@ -35,8 +35,9 @@ export default function Hero() {
               Joseph Butler
             </motion.h1>
 
-            <motion.p variants={item} className="text-lg text-neutral-600 mb-5 tracking-[-0.01em]">
-              Junior software developer
+            <motion.p variants={item} className="text-[19px] font-semibold tracking-[-0.015em] mb-5">
+              <span className="text-neutral-950">Junior software developer.</span>{' '}
+              <span className="text-neutral-500">Real apps, real users.</span>
             </motion.p>
 
             <motion.p variants={item} className="text-[15px] text-neutral-500 max-w-[440px] leading-[1.85] mb-10">
@@ -45,11 +46,11 @@ export default function Hero() {
               Ivy Tech and I&apos;m looking for my first professional role.
             </motion.p>
 
-            <motion.div variants={item} className="flex flex-wrap items-center gap-3 mb-12">
+            <motion.div variants={item} className="flex flex-wrap items-center gap-6 mb-12">
               <PDFDownloadLink
                 document={<ResumePDF />}
                 fileName="Joseph_Butler_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-950 text-white text-sm font-medium hover:bg-neutral-700 hover:-translate-y-px active:translate-y-0 active:bg-neutral-800 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-500 hover:-translate-y-px active:translate-y-0 active:bg-blue-700 transition-all duration-200"
               >
                 {({ loading }) => (
                   <>
@@ -60,9 +61,12 @@ export default function Hero() {
               </PDFDownloadLink>
               <a
                 href="#projects"
-                className="px-5 py-2.5 rounded-full border border-neutral-200 text-neutral-700 text-sm font-medium hover:border-neutral-400 hover:-translate-y-px transition-all duration-200"
+                className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline underline-offset-4"
               >
-                View Projects
+                View projects
+                <svg className="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
               </a>
             </motion.div>
 

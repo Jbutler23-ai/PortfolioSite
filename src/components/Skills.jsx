@@ -1,4 +1,4 @@
-import { Reveal, SectionHeading } from './shared';
+import { Reveal, Section, SectionHeading } from './shared';
 
 const groups = [
   { label: 'Languages', skills: 'Python · JavaScript · SQL' },
@@ -10,8 +10,8 @@ const groups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 max-w-5xl mx-auto w-full border-t border-neutral-100">
-      <SectionHeading index="04" title="Skills" />
+    <Section id="skills">
+      <SectionHeading title="Skills" tagline="What I work with." />
 
       <div className="max-w-3xl">
         {groups.map((group, i) => (
@@ -29,6 +29,6 @@ export default function Skills() {
           </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,4 +1,4 @@
-import { Reveal, SectionHeading } from './shared';
+import { Reveal, Section, SectionHeading } from './shared';
 
 const schools = [
   {
@@ -17,8 +17,8 @@ const schools = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 px-6 max-w-5xl mx-auto w-full border-t border-neutral-100">
-      <SectionHeading index="05" title="Education" />
+    <Section id="education" divider>
+      <SectionHeading title="Education" tagline="Where I'm learning." />
 
       <div className="max-w-3xl">
         {schools.map((school, i) => (
@@ -48,6 +48,6 @@ export default function Education() {
           </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
