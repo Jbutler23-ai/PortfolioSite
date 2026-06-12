@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumePDF } from './ResumePDF';
 
-const links = ['About', 'Skills', 'Projects', 'Experience', 'Contact'];
+const links = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,27 +23,27 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-[2px] left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled || open
-            ? 'bg-white/95 backdrop-blur-md border-b border-neutral-200/80 shadow-sm shadow-neutral-900/[0.03]'
+            ? 'bg-white/90 backdrop-blur-md border-b border-neutral-100'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
+        <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
           <a
             href="#"
             onClick={() => setOpen(false)}
-            className="text-sm font-semibold text-neutral-900 tracking-tight hover:text-neutral-500 transition-colors duration-150"
+            className="text-sm font-semibold text-neutral-950 tracking-tight hover:text-neutral-500 transition-colors duration-150"
           >
             Joseph Butler
           </a>
 
-          <ul className="hidden md:flex items-center gap-7">
+          <ul className="hidden md:flex items-center gap-8">
             {links.map(l => (
               <li key={l}>
                 <a
                   href={`#${l.toLowerCase()}`}
-                  className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors duration-150"
+                  className="text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors duration-150"
                 >
                   {l}
                 </a>
@@ -55,16 +55,9 @@ export default function Navbar() {
             <PDFDownloadLink
               document={<ResumePDF />}
               fileName="Joseph_Butler_Resume.pdf"
-              className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium px-4 py-1.5 rounded-full border border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300 transition-all duration-150"
+              className="hidden md:inline-flex items-center text-[13px] font-medium px-4 py-1.5 rounded-full bg-neutral-950 text-white hover:bg-neutral-700 transition-colors duration-150"
             >
-              {({ loading }) => (
-                <>
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  {loading ? 'Building…' : 'Resume'}
-                </>
-              )}
+              {({ loading }) => (loading ? 'Building…' : 'Resume')}
             </PDFDownloadLink>
 
             <button
@@ -99,7 +92,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[57px] z-40 bg-white flex flex-col md:hidden"
+            className="fixed inset-0 top-16 z-40 bg-white flex flex-col md:hidden"
           >
             <div className="flex flex-col px-6 py-8 flex-1">
               <ul className="flex flex-col">
@@ -113,7 +106,7 @@ export default function Navbar() {
                     <a
                       href={`#${l.toLowerCase()}`}
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between py-4 text-xl font-semibold text-neutral-900 border-b border-neutral-100 hover:text-blue-600 transition-colors duration-150"
+                      className="flex items-center justify-between py-4 text-xl font-semibold text-neutral-950 border-b border-neutral-100 hover:text-blue-600 transition-colors duration-150"
                     >
                       {l}
                       <svg className="w-4 h-4 text-neutral-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -133,16 +126,9 @@ export default function Navbar() {
                 <PDFDownloadLink
                   document={<ResumePDF />}
                   fileName="Joseph_Butler_Resume.pdf"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-900 text-white text-sm font-medium hover:bg-neutral-700 transition-colors duration-150"
+                  className="inline-flex items-center px-6 py-3 rounded-full bg-neutral-950 text-white text-sm font-medium hover:bg-neutral-700 transition-colors duration-150"
                 >
-                  {({ loading }) => (
-                    <>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      {loading ? 'Building…' : 'Download Resume'}
-                    </>
-                  )}
+                  {({ loading }) => (loading ? 'Building…' : 'Download Resume')}
                 </PDFDownloadLink>
               </motion.div>
             </div>

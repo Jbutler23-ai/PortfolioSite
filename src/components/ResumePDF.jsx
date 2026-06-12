@@ -109,7 +109,7 @@ export function ResumePDF() {
               <View style={s.skillGroup}><Text style={s.skillLabel}>Frameworks</Text><Text style={s.skillText}>React · React Native</Text></View>
               <View style={s.skillGroup}><Text style={s.skillLabel}>Concepts</Text><Text style={s.skillText}>REST APIs · Responsive Design{'\n'}Debugging · Project Planning</Text></View>
               <View style={s.skillGroup}><Text style={s.skillLabel}>Tools</Text><Text style={s.skillText}>GitHub · VS Code{'\n'}Browser DevTools</Text></View>
-              <View style={s.skillGroup}><Text style={s.skillLabel}>Other</Text><Text style={s.skillText}>Data Annotation{'\n'}Written Evaluation{'\n'}Problem Solving</Text></View>
+              <View style={s.skillGroup}><Text style={s.skillLabel}>Other</Text><Text style={s.skillText}>AI Output Evaluation{'\n'}Written Feedback{'\n'}Problem Solving</Text></View>
             </View>
             <View style={s.sideSection}>
               <Text style={s.sideTitle}>Education</Text>
@@ -139,16 +139,6 @@ export function ResumePDF() {
 
               <View style={s.expItem}>
                 <View style={s.expRow}>
-                  <Text style={s.expRole}>VR Game Creator — Rec Room</Text>
-                  <Text style={s.expPeriod}>2021 – 2023</Text>
-                </View>
-                <Text style={s.expType}>Independent</Text>
-                <Bullet>Grew a self-published VR game to 577,000+ organic plays by iterating on level design, challenge balance, and player flow using observed in-game behavior as feedback.</Bullet>
-                <Bullet>Shipped multiple interactive environments from concept to live audience by planning layouts, writing game logic, and refining each experience through structured playtesting.</Bullet>
-              </View>
-
-              <View style={s.expItem}>
-                <View style={s.expRow}>
                   <Text style={s.expRole}>AI Engineer</Text>
                   <Text style={s.expPeriod}>Apr 2025 – Present</Text>
                 </View>
@@ -159,12 +149,22 @@ export function ResumePDF() {
 
               <View style={s.expItem}>
                 <View style={s.expRow}>
-                  <Text style={s.expRole}>Software Development Projects</Text>
+                  <Text style={s.expRole}>Independent Software Projects</Text>
                   <Text style={s.expPeriod}>2023 – Present</Text>
                 </View>
                 <Text style={s.expType}>Personal</Text>
-                <Bullet>Built 5+ working applications across web, mobile, desktop, and CLI by applying Python, JavaScript, React, and React Native to solve specific, real-world user problems.</Bullet>
+                <Bullet>Built 5+ working applications across web, mobile, and CLI by applying Python, JavaScript, React, and React Native to solve specific, real-world user problems.</Bullet>
                 <Bullet>Improved code reliability and debug speed by adopting consistent component structure, modular design patterns, and step-by-step isolation testing on each project.</Bullet>
+              </View>
+
+              <View style={s.expItem}>
+                <View style={s.expRow}>
+                  <Text style={s.expRole}>VR Game Creator — Rec Room</Text>
+                  <Text style={s.expPeriod}>2021 – 2023</Text>
+                </View>
+                <Text style={s.expType}>Independent</Text>
+                <Bullet>Grew a self-published VR game to 577,000+ organic plays by iterating on level design, challenge balance, and player flow using observed in-game behavior as feedback.</Bullet>
+                <Bullet>Shipped multiple interactive environments from concept to live audience by planning layouts, writing game logic, and refining each experience through structured playtesting.</Bullet>
               </View>
             </View>
 

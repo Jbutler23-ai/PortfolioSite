@@ -1,58 +1,32 @@
-import { motion } from 'framer-motion';
-import { SectionHeading } from './shared';
+import { Reveal, SectionHeading } from './shared';
 
 const groups = [
-  {
-    label: 'Languages',
-    skills: ['Python', 'JavaScript', 'SQL'],
-  },
-  {
-    label: 'Frameworks',
-    skills: ['React', 'React Native'],
-  },
-  {
-    label: 'Concepts',
-    skills: ['Responsive Design', 'REST APIs', 'Debugging', 'Project Planning'],
-  },
-  {
-    label: 'Tools',
-    skills: ['GitHub', 'VS Code', 'Browser DevTools'],
-  },
-  {
-    label: 'Other',
-    skills: ['AI Evaluation', 'Written Feedback', 'Problem Solving'],
-  },
+  { label: 'Languages', skills: 'Python · JavaScript · SQL' },
+  { label: 'Frameworks', skills: 'React · React Native' },
+  { label: 'Practices', skills: 'REST APIs · Responsive design · Debugging · Project planning' },
+  { label: 'Tools', skills: 'Git & GitHub · VS Code · Browser DevTools' },
+  { label: 'Also', skills: 'AI output evaluation · Written feedback · Problem solving' },
 ];
 
 export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 max-w-5xl mx-auto w-full border-t border-neutral-100">
-      <SectionHeading label="Skills" title="What I work with" />
+      <SectionHeading index="04" title="Skills" />
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="max-w-3xl">
         {groups.map((group, i) => (
-          <motion.div
+          <Reveal
             key={group.label}
-            className="p-5 rounded-xl border border-neutral-200 hover:border-neutral-300 bg-white hover:bg-neutral-50/50 transition-all duration-200 group"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.45, delay: i * 0.06, ease: [0.25, 0.1, 0.25, 1] }}
+            delay={i * 0.05}
+            className={`grid sm:grid-cols-[170px_1fr] gap-x-12 gap-y-1 py-5 ${
+              i < groups.length - 1 ? 'border-b border-neutral-100' : ''
+            }`}
           >
-            <p className="text-[10px] font-semibold text-neutral-400 uppercase tracking-[0.14em] mb-3.5">
+            <p className="text-[11px] font-medium text-neutral-400 uppercase tracking-[0.12em] sm:pt-1">
               {group.label}
             </p>
-            <div className="flex flex-wrap gap-2">
-              {group.skills.map(s => (
-                <span
-                  key={s}
-                  className="text-[13px] px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 group-hover:bg-white group-hover:border group-hover:border-neutral-200 transition-all duration-200 border border-transparent"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+            <p className="text-[15px] text-neutral-700">{group.skills}</p>
+          </Reveal>
         ))}
       </div>
     </section>

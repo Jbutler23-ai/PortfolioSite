@@ -1,155 +1,123 @@
-import { motion } from 'framer-motion';
-import { SectionHeading } from './shared';
+import { Reveal, SectionHeading, ArrowUpRight } from './shared';
 
-const GITHUB = 'https://github.com/Jbutler23-ai';
+const featured = {
+  title: 'Rec Room VR Experiences',
+  description:
+    'Grew a self-published VR game to 577,000+ organic plays by iterating on level design, challenge balance, and player flow — using observed in-game behavior as the primary feedback signal for each update.',
+  tech: 'Game design · VR · Level design · UX',
+};
 
 const projects = [
   {
-    title: 'Rec Room VR Experiences',
+    title: 'envcheck',
     description:
-      'Grew a self-published VR game to 577,000+ organic plays by iterating on level design, challenge balance, and player flow — using observed in-game behavior as the primary feedback signal for each update.',
-    tags: ['Game Design', 'VR', 'Level Design', 'UX'],
-    stat: { value: '577K+', label: 'plays' },
-    featured: true,
-  },
-  {
-    title: 'Plant Identification App',
-    description:
-      'Reduced friction for plant owners by designing a mobile app concept that identifies plants and surfaces care info in as few taps as possible — built with React Native around real usage patterns.',
-    tags: ['React Native', 'Mobile', 'UI/UX'],
+      'Catches misconfigured environments before they cause runtime failures by cross-referencing .env files against actual code usage — flags missing and unused variables across 10 languages, with a --strict mode for CI pipelines.',
+    tech: 'Python · CLI · Static analysis',
+    href: 'https://github.com/Jbutler23-ai/envcheck',
   },
   {
     title: 'StandupScribe',
     description:
-      'Cut the time spent writing daily standups by building a CLI tool that scans local git repos for recent commits and formats them into ready-to-send notes — supports plain text, Markdown, and Slack output with no external dependencies.',
-    tags: ['Python', 'CLI', 'Git'],
-  },
-  {
-    title: 'envcheck',
-    description:
-      'Caught misconfigured environments before they cause runtime failures by building a static analysis tool that cross-references .env files against actual code usage — flags missing and unused variables across 10 languages with a --strict mode for CI pipelines.',
-    tags: ['Python', 'CLI', 'Static Analysis'],
+      'Cuts the time spent writing daily standups by scanning local git repos for recent commits and formatting them into ready-to-send notes — plain text, Markdown, or Slack output, zero external dependencies.',
+    tech: 'Python · CLI · Git',
+    href: 'https://github.com/Jbutler23-ai/standup-scribe',
   },
   {
     title: 'ShiftGuard',
     description:
-      'Solved a real scheduling problem for small teams by building a CLI tool that parses two CSV files — employee availability and a weekly schedule — and clearly reports every conflict found.',
-    tags: ['Python', 'CLI', 'CSV'],
+      'Solves a real scheduling problem for small teams by parsing two CSV files — employee availability and a weekly schedule — and reporting every conflict it finds, clearly.',
+    tech: 'Python · CLI · CSV',
+    href: 'https://github.com/Jbutler23-ai/ShiftGuard',
+  },
+  {
+    title: 'Plant Identification App',
+    description:
+      'Reduces friction for plant owners with a React Native concept that identifies plants and surfaces care info in as few taps as possible — designed around real usage patterns.',
+    tech: 'React Native · Mobile · UI/UX',
   },
 ];
 
 export default function Projects() {
-  const [featured, ...rest] = projects;
-
   return (
     <section id="projects" className="py-24 px-6 max-w-5xl mx-auto w-full border-t border-neutral-100">
-      <SectionHeading label="Projects" title="Things I've built" />
+      <SectionHeading index="03" title="Projects" />
 
-      <motion.div
-        className="relative rounded-2xl border border-neutral-200 overflow-hidden mb-4 hover:border-blue-200 transition-colors duration-200 group"
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-transparent pointer-events-none" />
-        <div className="relative p-8">
-          <div className="flex flex-col md:flex-row md:items-start gap-8">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-[0.14em]">
-                  Featured
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-3 tracking-tight">
-                {featured.title}
-              </h3>
-              <p className="text-[15px] text-neutral-500 leading-[1.8] mb-5 max-w-xl">
-                {featured.description}
-              </p>
-              <div className="flex flex-wrap items-center gap-2">
-                {featured.tags.map(t => (
-                  <span
-                    key={t}
-                    className="text-xs px-3 py-1 rounded-full bg-white border border-neutral-200 text-neutral-500"
-                  >
-                    {t}
-                  </span>
-                ))}
-                <a
-                  href={GITHUB}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-500 font-medium ml-1 transition-colors duration-150"
-                >
-                  View on GitHub
-                  <ArrowUpRight />
-                </a>
-              </div>
-            </div>
-
-            <div className="shrink-0 flex flex-col items-center justify-center px-8 py-6 rounded-xl bg-white border border-neutral-200 shadow-sm min-w-[130px] group-hover:border-blue-100 transition-all duration-300">
-              <span className="text-3xl font-bold text-blue-600 tracking-tight">
-                {featured.stat.value}
-              </span>
-              <span className="text-xs text-neutral-400 mt-1">{featured.stat.label}</span>
-            </div>
+      <Reveal className="rounded-2xl border border-neutral-200 p-8 md:p-10 mb-12">
+        <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] font-medium text-blue-600 uppercase tracking-[0.14em] mb-3">
+              Featured
+            </p>
+            <h3 className="text-xl font-semibold text-neutral-950 tracking-[-0.01em] mb-3">
+              {featured.title}
+            </h3>
+            <p className="text-[15px] text-neutral-500 leading-[1.8] mb-4 max-w-xl">
+              {featured.description}
+            </p>
+            <p className="text-[13px] text-neutral-400">{featured.tech}</p>
+          </div>
+          <div className="shrink-0 md:text-right md:border-l md:border-neutral-100 md:pl-12">
+            <p className="text-4xl font-extrabold text-neutral-950 tracking-[-0.03em] tabular-nums">577K+</p>
+            <p className="text-[13px] text-neutral-400 mt-1.5">organic plays</p>
           </div>
         </div>
-      </motion.div>
+      </Reveal>
 
-      <div className="border border-neutral-200 rounded-2xl overflow-hidden">
-        {rest.map((project, i) => (
-          <motion.a
-            key={project.title}
-            href={GITHUB}
-            target="_blank"
-            rel="noreferrer"
-            className={`flex flex-col sm:flex-row sm:items-start gap-4 px-6 py-5 hover:bg-blue-50/30 transition-colors duration-150 group ${
-              i < rest.length - 1 ? 'border-b border-neutral-100' : ''
-            }`}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-30px' }}
-            transition={{ duration: 0.4, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <div className="sm:w-6 sm:pt-[3px] shrink-0">
-              <span className="text-xs font-medium text-neutral-300 tabular-nums">
+      <div className="flex flex-col">
+        {projects.map((project, i) => {
+          const inner = (
+            <>
+              <span className="text-[13px] font-medium text-neutral-300 tabular-nums sm:pt-1">
                 {String(i + 2).padStart(2, '0')}
               </span>
-            </div>
-            <div className="flex-1 min-w-0">
-              <h4 className="text-sm font-semibold text-neutral-800 mb-1.5 group-hover:text-blue-600 transition-colors">
-                {project.title}
-              </h4>
-              <p className="text-[13.5px] text-neutral-400 leading-relaxed mb-3">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {project.tags.map(t => (
-                  <span
-                    key={t}
-                    className="text-[11.5px] px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-500"
-                  >
-                    {t}
+              <span className="flex-1 min-w-0 block">
+                <span className="flex items-center gap-2 mb-2">
+                  <span className="text-[15px] font-semibold text-neutral-900 tracking-[-0.01em] group-hover:text-blue-600 transition-colors duration-150">
+                    {project.title}
                   </span>
-                ))}
-              </div>
-            </div>
-            <div className="shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity duration-150 text-blue-500">
-              <ArrowUpRight />
-            </div>
-          </motion.a>
-        ))}
-      </div>
-    </section>
-  );
-}
+                  {project.href && (
+                    <span className="text-neutral-300 group-hover:text-blue-500 transition-colors duration-150">
+                      <ArrowUpRight />
+                    </span>
+                  )}
+                </span>
+                <span className="block text-[14px] text-neutral-500 leading-[1.75] mb-2.5 max-w-2xl">
+                  {project.description}
+                </span>
+                <span className="block text-[13px] text-neutral-400">{project.tech}</span>
+              </span>
+            </>
+          );
 
-function ArrowUpRight() {
-  return (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
-    </svg>
+          const rowClass = `group flex flex-col sm:flex-row gap-2 sm:gap-12 py-7 ${
+            i < projects.length - 1 ? 'border-b border-neutral-100' : ''
+          }`;
+
+          return (
+            <Reveal key={project.title} delay={i * 0.06}>
+              {project.href ? (
+                <a href={project.href} target="_blank" rel="noreferrer" className={rowClass}>
+                  {inner}
+                </a>
+              ) : (
+                <div className={rowClass}>{inner}</div>
+              )}
+            </Reveal>
+          );
+        })}
+      </div>
+
+      <Reveal delay={0.1} className="mt-10">
+        <a
+          href="https://github.com/Jbutler23-ai?tab=repositories"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors duration-150"
+        >
+          More on GitHub
+          <ArrowUpRight />
+        </a>
+      </Reveal>
+    </section>
   );
 }
