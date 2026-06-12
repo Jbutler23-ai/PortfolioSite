@@ -52,17 +52,17 @@ export default function Projects() {
                 Rec Room VR Experiences
               </h3>
               <p className="text-[15px] font-medium text-neutral-300 mb-3">
-                All out play. Built solo, played 577,000+ times.
+                All out play. Built solo, played 1.8 million+ times.
               </p>
               <p className="text-[14px] text-neutral-400 leading-[1.75] mb-4 max-w-xl">
-                Grew a self-published VR game to 577,000+ organic plays by iterating on level
+                Grew a self-published VR game to 1.8 million+ organic plays by iterating on level
                 design, challenge balance, and player flow — using observed in-game behavior
                 as the primary feedback signal for each update.
               </p>
               <p className="text-[13px] text-neutral-500">Game design · VR · Level design · UX</p>
             </div>
             <div className="shrink-0 md:text-right md:border-l md:border-white/10 md:pl-12">
-              <p className="text-5xl font-bold text-white tracking-[-0.03em] tabular-nums">577K+</p>
+              <p className="text-5xl font-bold text-white tracking-[-0.03em] tabular-nums">1.8M+</p>
               <p className="text-[13px] text-neutral-400 mt-2">organic plays</p>
             </div>
           </div>

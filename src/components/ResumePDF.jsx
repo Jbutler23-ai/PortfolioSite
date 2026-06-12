@@ -128,7 +128,7 @@ export function ResumePDF() {
               <Text style={s.mainTitle}>Summary</Text>
               <Text style={s.summaryText}>
                 Junior developer who has shipped web apps, mobile apps, CLI tools, and a VR game played
-                over 577,000 times. Builds with Python, JavaScript, React, and React Native. Has professional
+                over 1.8 million times. Builds with Python, JavaScript, React, and React Native. Has professional
                 experience evaluating technical work against precise standards. Studying at Ivy Tech,
                 continuing at Indiana University Southeast. Actively seeking first professional role.
               </Text>
@@ -163,7 +163,7 @@ export function ResumePDF() {
                   <Text style={s.expPeriod}>2021 – 2023</Text>
                 </View>
                 <Text style={s.expType}>Independent</Text>
-                <Bullet>Grew a self-published VR game to 577,000+ organic plays by iterating on level design, challenge balance, and player flow using observed in-game behavior as feedback.</Bullet>
+                <Bullet>Grew a self-published VR game to 1.8 million+ organic plays by iterating on level design, challenge balance, and player flow using observed in-game behavior as feedback.</Bullet>
                 <Bullet>Shipped multiple interactive environments from concept to live audience by planning layouts, writing game logic, and refining each experience through structured playtesting.</Bullet>
               </View>
             </View>

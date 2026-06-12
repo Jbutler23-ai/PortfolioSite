@@ -42,7 +42,7 @@ export default function Hero() {
 
             <motion.p variants={item} className="text-[15px] text-neutral-500 max-w-[440px] leading-[1.85] mb-10">
               I&apos;ve shipped web apps, mobile apps, and command-line tools — and a VR game
-              that&apos;s been played more than 577,000 times. I study software development at
+              that&apos;s been played more than 1.8 million times. I study software development at
               Ivy Tech and I&apos;m looking for my first professional role.
             </motion.p>
 
@@ -117,7 +117,7 @@ function CodeCard() {
           <Str>"React Native"</Str><Punct>,</Punct> <Str>"SQL"</Str><Punct>{'],'}</Punct>
         </CodeLine>
         <CodeLine indent={1}>
-          <Key>vrGamePlays</Key><Punct>:</Punct> <Num>{' 577_000'}</Num><Punct>,</Punct>
+          <Key>vrGamePlays</Key><Punct>:</Punct> <Num>{' 1_800_000'}</Num><Punct>,</Punct>
         </CodeLine>
         <CodeLine indent={1}>
           <Key>openTo</Key><Punct>:</Punct> <Str>{' "internships & entry-level"'}</Str><Punct>,</Punct>
@@ -132,7 +132,7 @@ function CodeCard() {
       </div>
 
       <div className="px-5 pb-5 pt-4 flex flex-col gap-2.5 border-t border-white/[0.06]">
-        <StatRow label="VR game plays" value="577K+" accent />
+        <StatRow label="VR game plays" value="1.8M+" accent />
         <StatRow label="Projects shipped" value="5+" />
         <StatRow label="Platforms" value="web · mobile · CLI" />
       </div>

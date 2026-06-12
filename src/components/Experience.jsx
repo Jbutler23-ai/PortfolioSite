@@ -26,7 +26,7 @@ const items = [
     type: 'Independent',
     period: '2021 – 2023',
     bullets: [
-      'Grew a self-published VR game to 577,000+ organic plays by iterating on level design, challenge balance, and player flow.',
+      'Grew a self-published VR game to 1.8 million+ organic plays by iterating on level design, challenge balance, and player flow.',
       'Shipped multiple interactive environments from concept to live audience, using observed player behavior as the primary feedback signal for each update.',
     ],
     skills: 'Level design · Game logic · User experience',
