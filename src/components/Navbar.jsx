@@ -8,11 +8,33 @@ const links = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState('');
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 30);
+    const fn = () => {
+      setScrolled(window.scrollY > 30);
+      if (window.scrollY < window.innerHeight * 0.4) setActive('');
+    };
     window.addEventListener('scroll', fn, { passive: true });
     return () => window.removeEventListener('scroll', fn);
+  }, []);
+
+  useEffect(() => {
+    const sections = links
+      .map(l => document.getElementById(l.toLowerCase()))
+      .filter(Boolean);
+    const observer = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && window.scrollY >= window.innerHeight * 0.4) {
+            setActive(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: '-35% 0px -60% 0px' }
+    );
+    sections.forEach(s => observer.observe(s));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -39,16 +61,23 @@ export default function Navbar() {
           </a>
 
           <ul className="hidden md:flex items-center gap-8">
-            {links.map(l => (
-              <li key={l}>
-                <a
-                  href={`#${l.toLowerCase()}`}
-                  className="text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors duration-150"
-                >
-                  {l}
-                </a>
-              </li>
-            ))}
+            {links.map(l => {
+              const isActive = active === l.toLowerCase();
+              return (
+                <li key={l}>
+                  <a
+                    href={`#${l.toLowerCase()}`}
+                    className={`text-[13px] transition-colors duration-150 ${
+                      isActive
+                        ? 'text-neutral-950 font-medium'
+                        : 'text-neutral-500 hover:text-neutral-950'
+                    }`}
+                  >
+                    {l}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <div className="flex items-center gap-3">

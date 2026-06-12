@@ -13,18 +13,15 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
 };
 
-const facts = [
-  { label: 'Currently', value: 'Ivy Tech — Software Development' },
-  { label: 'Focus', value: 'React · Python · React Native' },
-  { label: 'Most played', value: '577,000+ VR game plays' },
-  { label: 'Looking for', value: 'Internships & entry-level roles' },
-];
-
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center px-6 pt-24 pb-20">
+    <section className="relative min-h-screen flex items-center px-6 pt-24 pb-20 overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(ellipse_55%_50%_at_75%_20%,rgba(59,130,246,0.05),transparent)]"
+      />
+
       <div className="max-w-5xl mx-auto w-full">
-        <div className="grid lg:grid-cols-[1fr_300px] gap-16 xl:gap-24 items-center">
+        <div className="grid lg:grid-cols-[1fr_380px] gap-16 xl:gap-20 items-center">
           <motion.div variants={container} initial="hidden" animate="show">
             <motion.p variants={item} className="flex items-center gap-2.5 text-sm text-neutral-500 mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -52,7 +49,7 @@ export default function Hero() {
               <PDFDownloadLink
                 document={<ResumePDF />}
                 fileName="Joseph_Butler_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-950 text-white text-sm font-medium hover:bg-neutral-700 active:bg-neutral-800 transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-950 text-white text-sm font-medium hover:bg-neutral-700 hover:-translate-y-px active:translate-y-0 active:bg-neutral-800 transition-all duration-200"
               >
                 {({ loading }) => (
                   <>
@@ -63,7 +60,7 @@ export default function Hero() {
               </PDFDownloadLink>
               <a
                 href="#projects"
-                className="px-5 py-2.5 rounded-full border border-neutral-200 text-neutral-700 text-sm font-medium hover:border-neutral-400 transition-colors duration-200"
+                className="px-5 py-2.5 rounded-full border border-neutral-200 text-neutral-700 text-sm font-medium hover:border-neutral-400 hover:-translate-y-px transition-all duration-200"
               >
                 View Projects
               </a>
@@ -77,29 +74,94 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.dl
-            initial={{ opacity: 0, y: 14 }}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5, ease: EASE }}
+            transition={{ duration: 0.8, delay: 0.45, ease: EASE }}
             className="hidden lg:block"
           >
-            {facts.map((f, i) => (
-              <div
-                key={f.label}
-                className={`py-4 ${i > 0 ? 'border-t border-neutral-100' : ''}`}
-              >
-                <dt className="text-[11px] font-medium text-neutral-400 uppercase tracking-[0.12em] mb-1">
-                  {f.label}
-                </dt>
-                <dd className="text-sm text-neutral-800">{f.value}</dd>
-              </div>
-            ))}
-          </motion.dl>
+            <CodeCard />
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
+
+function CodeCard() {
+  return (
+    <div className="select-none rounded-2xl bg-neutral-950 border border-neutral-800/70 shadow-2xl shadow-neutral-950/[0.15] overflow-hidden">
+      <div className="flex items-center justify-between px-5 h-10 border-b border-white/[0.06]">
+        <span className="text-[11px] text-neutral-500 font-mono tracking-wide">joseph.config.js</span>
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/80" />
+      </div>
+
+      <div className="p-5 font-mono text-[12.5px] leading-[1.8]">
+        <CodeLine>
+          <Kw>const</Kw> <Var>{' joseph'}</Var> <Punct>{'= {'}</Punct>
+        </CodeLine>
+        <CodeLine indent={1}>
+          <Key>role</Key><Punct>:</Punct> <Str>{' "Junior Software Developer"'}</Str><Punct>,</Punct>
+        </CodeLine>
+        <CodeLine indent={1}>
+          <Key>school</Key><Punct>:</Punct> <Str>{' "Ivy Tech"'}</Str><Punct>,</Punct>
+        </CodeLine>
+        <CodeLine indent={1}>
+          <Key>stack</Key><Punct>{': ['}</Punct><Str>"React"</Str><Punct>,</Punct> <Str>"Python"</Str><Punct>,</Punct>
+        </CodeLine>
+        <CodeLine indent={2}>
+          <Str>"React Native"</Str><Punct>,</Punct> <Str>"SQL"</Str><Punct>{'],'}</Punct>
+        </CodeLine>
+        <CodeLine indent={1}>
+          <Key>vrGamePlays</Key><Punct>:</Punct> <Num>{' 577_000'}</Num><Punct>,</Punct>
+        </CodeLine>
+        <CodeLine indent={1}>
+          <Key>openTo</Key><Punct>:</Punct> <Str>{' "internships & entry-level"'}</Str><Punct>,</Punct>
+        </CodeLine>
+        <CodeLine indent={1}>
+          <Key>available</Key><Punct>:</Punct> <Bool>{' true'}</Bool><Punct>,</Punct>
+        </CodeLine>
+        <CodeLine>
+          <Punct>{'};'}</Punct>
+          <span className="inline-block w-[7px] h-[15px] ml-1.5 align-text-bottom bg-neutral-500 animate-blink" />
+        </CodeLine>
+      </div>
+
+      <div className="px-5 pb-5 pt-4 flex flex-col gap-2.5 border-t border-white/[0.06]">
+        <StatRow label="VR game plays" value="577K+" accent />
+        <StatRow label="Projects shipped" value="5+" />
+        <StatRow label="Platforms" value="web · mobile · CLI" />
+      </div>
+    </div>
+  );
+}
+
+function CodeLine({ children, indent = 0 }) {
+  return (
+    <div style={{ paddingLeft: indent * 18 }}>
+      {children}
+    </div>
+  );
+}
+
+function StatRow({ label, value, accent }) {
+  return (
+    <div className="flex items-center justify-between">
+      <span className="text-[11px] text-neutral-500 font-mono">{label}</span>
+      <span className={`text-[12px] font-semibold font-mono ${accent ? 'text-sky-400' : 'text-neutral-300'}`}>
+        {value}
+      </span>
+    </div>
+  );
+}
+
+const Kw = ({ children }) => <span className="text-sky-400">{children}</span>;
+const Var = ({ children }) => <span className="text-neutral-100">{children}</span>;
+const Key = ({ children }) => <span className="text-neutral-400">{children}</span>;
+const Str = ({ children }) => <span className="text-emerald-300/90">{children}</span>;
+const Bool = ({ children }) => <span className="text-sky-300">{children}</span>;
+const Num = ({ children }) => <span className="text-sky-300">{children}</span>;
+const Punct = ({ children }) => <span className="text-neutral-600">{children}</span>;
 
 function DownloadIcon() {
   return (
